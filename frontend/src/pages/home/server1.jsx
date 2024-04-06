@@ -1789,9 +1789,7 @@ const App = () => {
         console.error("Error fetching todos:", error);
       });
 
-    const socket = io(https://project02-by32.onrender.com", {
-      withCredentials: true,
-    });
+    const socket = io(https://project02-by32.onrender.com");
     setSocket(socket);
 
     socket.on("connect", () => {
