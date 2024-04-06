@@ -30,7 +30,7 @@ const App = () => {
         console.error("Error fetching todos:", error);
       });
 
-    const socket = io("https://project02-by32.onrender.com:8000", {
+    const socket = io("https://project02-by32.onrender.com:5000", {
       withCredentials: true,
     });
     setSocket(socket);
