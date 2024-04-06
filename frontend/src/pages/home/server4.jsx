@@ -21,7 +21,7 @@ const App = () => {
   useEffect(() => {
     console.log("hi");
     axios
-      .get("http://localhost:5000/business")
+      .get("https://project02-by32.onrender.com:5000/business")
       .then((response) => {
         setCards(response.data.todos || []);
       })
@@ -29,7 +29,7 @@ const App = () => {
         console.error("Error fetching todos:", error);
       });
 
-    const socket = io("http://localhost:8000", {
+    const socket = io("https://project02-by32.onrender.com:5000", {
       withCredentials: true,
     });
     setSocket(socket);
@@ -67,7 +67,7 @@ const App = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/server1/business",{
+        "https://project02-by32.onrender.com:5000/server1/business",{
           businessName:newCardContent,
           user:userData.username,
           details:date
