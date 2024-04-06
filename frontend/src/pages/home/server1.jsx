@@ -1781,7 +1781,7 @@ const App = () => {
   useEffect(() => {
     console.log("hi");
     axios
-      .get("https://project02-by32.onrender.com:5000/lost")
+      .get("https://project02-by32.onrender.com/lost")
       .then((response) => {
         setCards(response.data.todos || []);
       })
@@ -1789,7 +1789,7 @@ const App = () => {
         console.error("Error fetching todos:", error);
       });
 
-    const socket = io(https://project02-by32.onrender.com:5000", {
+    const socket = io(https://project02-by32.onrender.com", {
       withCredentials: true,
     });
     setSocket(socket);
@@ -1825,7 +1825,7 @@ const App = () => {
 
     try {
       const response = await axios.post(
-        "https://project02-by32.onrender.com:5000/server1/lost",
+        "https://project02-by32.onrender.com/server1/lost",
         formData
       );
       alert("Todo added");
@@ -1944,7 +1944,7 @@ const App = () => {
               <div key={index} className="card">
                 {card.image && (
                   <img
-                    src={`https://project02-by32.onrender.com:5000/images/${card.image}`}
+                    src={`https://project02-by32.onrender.com/images/${card.image}`}
                     alt={`Image ${index}`}
                     height={150}
                     width={200}
