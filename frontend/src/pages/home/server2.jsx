@@ -22,7 +22,7 @@ const App = () => {
   useEffect(() => {
     console.log("hi");
     axios
-      .get("http://localhost:5000/travel")
+      .get("/api/travel")
       .then((response) => {
         setCards(response.data.todos || []);
       })
@@ -30,7 +30,7 @@ const App = () => {
         console.error("Error fetching todos:", error);
       });
 
-    const socket = io("http://localhost:5000", {
+    const socket = io("https://project02-mc5o.onrender.com", {
       withCredentials: true,
     });
     setSocket(socket);
@@ -68,7 +68,7 @@ const App = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/server1/travel",{
+        "/api/server1/travel",{
           destination:newCardContent,
           user:userData.username,
           date:date
