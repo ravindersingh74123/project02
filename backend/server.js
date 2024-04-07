@@ -38,8 +38,11 @@ app.use(express.static("public"));
 
 const storage = diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "/images");
+    cb(null, path.join(__dirname, "images"));
   },
+  // other options...
+}),
+
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now();
     cb(
