@@ -32,7 +32,7 @@ const App = () => {
         console.error("Error fetching todos:", error);
       });
 
-    const socket = io("http://localhost:5000", {
+    const socket = io("https://project02-mc5o.onrender.com", {
       withCredentials: true,
     });
     setSocket(socket);
@@ -68,7 +68,7 @@ const App = () => {
 
     try {
       const response = await axios.post(
-        "api/server1/lost",
+        "/api/server1/lost",
         formData
       );
       alert("Todo added");
