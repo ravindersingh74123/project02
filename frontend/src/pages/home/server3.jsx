@@ -22,7 +22,7 @@ const App = () => {
   useEffect(() => {
     console.log("hi");
     axios
-      .get("https://project02-by32.onrender.com/resell")
+      .get("http://localhost:5000/resell")
       .then((response) => {
         setCards(response.data.todos || []);
       })
@@ -30,7 +30,7 @@ const App = () => {
         console.error("Error fetching todos:", error);
       });
 
-    const socket = io("https://project02-by32.onrender.com", {
+    const socket = io("http://localhost:5000", {
       withCredentials: true,
     });
     setSocket(socket);
@@ -70,7 +70,7 @@ const App = () => {
 
     try {
       const response = await axios.post(
-        "https://project02-by32.onrender.com/server1/resell",
+        "http://localhost:5000/server1/resell",
         formData
       );
       alert("Todo added");
@@ -199,7 +199,7 @@ const App = () => {
               <div key={index} className="card">
                 {card.image && (
                   <img
-                    src={`https://project02-by32.onrender.com/images/${card.image}`}
+                    src={`http://localhost:5000/images/${card.image}`}
                     alt={`Image ${index}`}
                     height={150}
                     width={200}
@@ -256,3 +256,4 @@ const App = () => {
 };
 
 export default App;
+
