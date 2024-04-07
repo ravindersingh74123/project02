@@ -1,4 +1,8 @@
 
+
+
+
+
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import LogoutButton from "../../components/sidebar/LogoutButton";
@@ -20,7 +24,7 @@ const App = () => {
   useEffect(() => {
     console.log("hi");
     axios
-      .get("http://localhost:5000/lost")
+      .get("/api/lost")
       .then((response) => {
         setCards(response.data.todos || []);
       })
@@ -64,7 +68,7 @@ const App = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/server1/lost",
+        "api/server1/lost",
         formData
       );
       alert("Todo added");
@@ -183,7 +187,7 @@ const App = () => {
               <div key={index} className="card">
                 {card.image && (
                   <img
-                    src={`http://localhost:5000/images/${card.image}`}
+                    src={`http://localhost:5173/images/${card.image}`}
                     alt={`Image ${index}`}
                     height={150}
                     width={200}
@@ -238,4 +242,3 @@ const App = () => {
 };
 
 export default App;
-
