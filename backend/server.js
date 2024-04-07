@@ -38,7 +38,7 @@ app.use(express.static("public"));
 
 const storage = diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "dist/images");
+    cb(null, "public/images");
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now();
