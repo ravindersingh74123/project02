@@ -67,10 +67,12 @@ const App = () => {
     formData.append("name", userData.username);
 
     try {
+      console.log("hi1");
       const response = await axios.post(
         "/api/server1/lost",
         formData
       );
+      console.log("hi2");
       alert("Todo added");
       setCards((prevCards) => [...prevCards, response.data]);
       setNewCardContent("");
