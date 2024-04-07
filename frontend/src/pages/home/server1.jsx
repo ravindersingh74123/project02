@@ -69,7 +69,7 @@ const App = () => {
     try {
       console.log("hi1");
       const response = await axios.post(
-        "https://project02-mc5o.onrender.com/server1/lost",
+        "http://localhost:5000/server1/lost",
         formData
       );
       console.log("hi2");
