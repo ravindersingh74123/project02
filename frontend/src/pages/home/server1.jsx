@@ -187,7 +187,7 @@ const App = () => {
               <div key={index} className="card">
                 {card.image && (
                   <img
-                    src={`http://localhost:5173/images/${card.image}`}
+                    src={`http://localhost:5000/images/${card.image}`}
                     alt={`Image ${index}`}
                     height={150}
                     width={200}
