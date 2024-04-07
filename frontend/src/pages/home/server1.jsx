@@ -68,7 +68,7 @@ const App = () => {
 
     try {
       const response = await axios.post(
-        "https://project02-mc5o.onrender.com/server1/lost",
+        "/api/server1/lost",
         formData
       );
       alert("Todo added");
