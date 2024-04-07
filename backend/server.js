@@ -34,7 +34,7 @@ app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
 import multer, { diskStorage } from "multer";
-app.use(express.static("public"));
+app.use(express.static("../frontend/public"));
 
 const storage = diskStorage({
   destination: function (req, file, cb) {
