@@ -50,7 +50,7 @@ const storage = diskStorage({
 });
 
 const upload = multer({ storage: storage });
-app.post("/server1/resell", upload.single("image"), async function (req, res) {
+app.post("/api/server1/resell", upload.single("image"), async function (req, res) {
   const createPayload = req.body;
   const imageName = req.file.filename;
 
@@ -65,7 +65,7 @@ app.post("/server1/resell", upload.single("image"), async function (req, res) {
     msg: "Todo created",
   });
 });
-app.post("/server1/lost", upload.single("image"), async function (req, res) {
+app.post("/api/server1/lost", upload.single("image"), async function (req, res) {
   const createPayload = req.body;
   const imageName = req.file.filename;
 
@@ -79,7 +79,7 @@ app.post("/server1/lost", upload.single("image"), async function (req, res) {
     msg: "Todo created",
   });
 });
-app.post("/server1/travel", async function (req, res) {
+app.post("/api/server1/travel", async function (req, res) {
   const createPayload = req.body;
 
   // put it in mongodb
@@ -92,7 +92,7 @@ app.post("/server1/travel", async function (req, res) {
     msg: "Todo created",
   });
 });
-app.post("/server1/business", async function (req, res) {
+app.post("/api/server1/business", async function (req, res) {
   const createPayload = req.body;
 
   // put it in mongodb
@@ -106,7 +106,7 @@ app.post("/server1/business", async function (req, res) {
   });
 });
 
-app.get("/lost", async function (req, res) {
+app.get("/api/lost", async function (req, res) {
   try {
     // Fetch all todos from the database
     const todos = await Course.find();
@@ -121,7 +121,7 @@ app.get("/lost", async function (req, res) {
     res.status(500).json({ error: "Internal server error" });
   }
 });
-app.get("/business", async function (req, res) {
+app.get("/api/business", async function (req, res) {
   try {
     // Fetch all todos from the database
     const todos = await Business.find();
@@ -136,7 +136,7 @@ app.get("/business", async function (req, res) {
     res.status(500).json({ error: "Internal server error" });
   }
 });
-app.get("/resell", async function (req, res) {
+app.get("/api/resell", async function (req, res) {
   try {
     // Fetch all todos from the database
     const todos = await Resell.find();
@@ -151,7 +151,7 @@ app.get("/resell", async function (req, res) {
     res.status(500).json({ error: "Internal server error" });
   }
 });
-app.get("/travel", async function (req, res) {
+app.get("/api/travel", async function (req, res) {
   try {
     // Fetch all todos from the database
     const todos = await Travel.find();
