@@ -66,7 +66,6 @@ app.post("/api/server1/resell", upload.single("image"), async function (req, res
   });
 });
 app.post("/api/server1/lost", upload.single("image"), async function (req, res) {
-  console.log("hi3");
   const createPayload = req.body;
   const imageName = req.file.filename;
 
