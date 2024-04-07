@@ -189,7 +189,7 @@ const App = () => {
               <div key={index} className="card">
                 {card.image && (
                   <img
-                    src={`https://project02-mc5o.onrender.com/dist/images/${card.image}`}
+                    src={`https://project02-mc5o.onrender.com/images/${card.image}`}
                     alt={`Image ${index}`}
                     height={150}
                     width={200}
